@@ -31,3 +31,92 @@
         performance, and accessibility.
       </p>
     </section>
+
+    <section class="qa">
+      <h2>2) Four media features (with explanations & live examples)</h2>
+
+      <article class="feature">
+        <h3><code>max-width</code> — adapt to smaller viewports</h3>
+        <p>
+          <code>max-width</code> checks the viewport width and applies styles when it is at or below a certain value (e.g., 700px). 
+          It’s commonly used to switch from multi-column (desktop) to single-column (mobile) layouts.
+        </p>
+        <pre><code>@media (max-width: 700px) {
+  .demo-card { font-size: 1rem; padding: 1rem; }
+}</code></pre>
+      </article>
+
+      <article class="feature">
+        <h3><code>orientation</code> — portrait vs. landscape</h3>
+        <p>
+          <code>orientation</code> targets the current screen orientation. It’s useful for adjusting layouts on tablets/phones when the 
+          device rotates.
+        </p>
+        <pre><code>@media (orientation: landscape) {
+  .banner { min-height: 40vh; }
+}</code></pre>
+      </article>
+
+      <article class="feature">
+        <h3><code>prefers-color-scheme</code> — light/dark mode</h3>
+        <p>
+          Respects the user’s OS/browser theme preference. Provide a light default, then enhance for dark mode without JS.
+        </p>
+        <pre><code>@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #e6e6e6;
+    --card: #1a1f29;
+    --accent: #6aa1ff;
+  }
+}</code></pre>
+      </article>
+
+      <article class="feature">
+        <h3><code>prefers-reduced-motion</code> — accessibility for motion sensitivity</h3>
+        <p>
+          If a user indicates they prefer less motion (e.g., due to vestibular disorders), this feature lets you reduce or disable 
+          non-essential animations.
+        </p>
+        <pre><code>@media (prefers-reduced-motion: reduce) {
+  .spin { animation: none; }
+}</code></pre>
+      </article>
+    </section>
+
+    <section class="live-demos">
+      <h2>Live Demo Components</h2>
+      <p>Resize the window, rotate your device, switch OS theme (light/dark), or enable “Reduce motion” to see changes.</p>
+
+      <div class="grid">
+        <div class="demo-card">
+          <h4>Responsive Grid</h4>
+          <p>At wide widths: two columns. Under 700px: one column.</p>
+        </div>
+        <div class="demo-card">
+          <h4>Orientation Banner</h4>
+          <p>Landscape increases banner height for wider layouts.</p>
+        </div>
+      </div>
+
+      <div class="banner">
+        <div class="spin">✦</div>
+        <p class="banner-text">Dark mode & reduced motion aware</p>
+      </div>
+    </section>
+
+    <section class="references">
+      <h2>Notes</h2>
+      <ul>
+        <li>Common breakpoints: 480px, 600px, 768px, 1024px—treat them as guides, not rules.</li>
+        <li>Test with Firefox Responsive Design Mode: <em>F12 ▸ Responsive Design Mode</em>.</li>
+        <li>Combine features: <code>@media (max-width: 700px) and (orientation: portrait) { ... }</code></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Your Name — Code Log</p>
+  </footer>
+</body>
+</html>
