@@ -1,1 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Media Queries</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Code Log: How CSS media queries work, why they are useful, and four key media features with examples." />
+</head>
+<body>
+  <header class="site-header">
+    <h1>CSS Media Queries</h1>
+    <p class="subtitle">Code Log — How they work, why they’re useful, and four core media features</p>
+  </header>
 
+  <main class="content">
+    <section class="qa">
+      <h2>1) How does a CSS media query work, and why is it useful?</h2>
+      <p>
+        A <strong>CSS media query</strong> lets you apply styles only when certain conditions about the user’s device or environment are true. 
+        The basic form is <code>@media (&lt;condition&gt;)</code> followed by a block of CSS rules. When the condition matches—such as a 
+        viewport width under 700px, a dark color scheme, or a user who prefers reduced motion—the browser uses those rules. Media queries 
+        are the foundation of <em>responsive design</em>: they help the same HTML adapt to phones, tablets, laptops, large monitors, and 
+        accessibility preferences without duplicating pages.
+      </p>
+      <pre><code>@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+}</code></pre>
+      <p>
+        In short, media queries let your layout, typography, spacing, and features feel “native” to each context—improving usability, 
+        performance, and accessibility.
+      </p>
+    </section>
