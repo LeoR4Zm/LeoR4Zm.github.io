@@ -1,1 +1,133 @@
+/* Base theme tokens (light by default) */
+:root {
+  --bg: #ffffff;
+  --fg: #1c1f23;
+  --muted: #5a6b7b;
+  --card: #f6f8fa;
+  --accent: #2563eb;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+/* Layout */
+.site-header {
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(37,99,235,0.06), transparent 60%);
+}
+h1 { margin: 0 0 0.25rem; font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+.subtitle { margin: 0; color: var(--muted); }
+
+.content {
+  max-width: 980px;
+  margin: 2rem auto;
+  padding: 0 1rem 3rem;
+}
+
+.qa + .qa { margin-top: 2rem; }
+.feature + .feature { margin-top: 1rem; }
+
+pre, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+pre {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: auto;
+  box-shadow: var(--shadow);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1rem 0 2rem;
+}
+
+.demo-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 1.25rem 1.25rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+.banner {
+  margin: 1rem 0 2rem;
+  border-radius: 16px;
+  background: radial-gradient(600px 200px at 10% 10%, rgba(37,99,235,0.15), transparent 60%),
+              radial-gradient(600px 200px at 90% 20%, rgba(16,185,129,0.15), transparent 60%),
+              var(--card);
+  min-height: 28vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.banner .spin {
+  font-size: clamp(2rem, 6vw, 4rem);
+  animation: slowspin 12s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes slowspin {
+  from { transform: rotate(0deg) translateY(0); }
+  to   { transform: rotate(360deg) translateY(0); }
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-footer {
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* --- Media Queries Demo --- */
+
+/* 1) max-width: collapse grid & tighten spacing on small screens */
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
+  .demo-card { padding: 1rem; }
+  .content { padding: 0 0.75rem 2rem; }
+}
+
+/* 2) orientation: landscape — give banner more presence */
+@media (orientation: landscape) {
+  .banner { min-height: 40vh; }
+}
+
+/* 3) prefers-color-scheme: dark — automatic dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #e6e6e6;
+    --muted: #a7b0ba;
+    --card: #151a22;
+    --accent: #6aa1ff;
+    --shadow: 0 10px 32px rgba(0,0,0,0.35);
+  }
+}
+
+/* 4) prefers-reduced-motion: tone down animations */
+@media (prefers-reduced-motion: reduce) {
+  .spin { animation: none; }
+  * { scroll-behavior: auto; }
+}
 
