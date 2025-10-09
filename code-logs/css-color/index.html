@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Color — Code Log</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>CSS Color</h1>
+    <p class="lede">
+      This page explains how CSS uses color, including <code>color</code>, <code>background-color</code>, and <code>border-color</code>, and the main value formats (named, hex, RGB, and more).
+    </p>
+  </header>
+
+  <main>
+    <section id="properties">
+      <h2>What do these CSS properties do?</h2>
+
+      <article>
+        <h3><code>color</code></h3>
+        <p>
+          Sets the <strong>foreground (text) color</strong> of an element.
+          It can also affect currentColor usages (e.g., SVG strokes, borders using <code>currentColor</code>).
+        </p>
+        <pre><code>p { color: #333333; }
+a { color: rgb(0 102 204); }</code></pre>
+      </article>
+
+      <article>
+        <h3><code>background-color</code></h3>
+        <p>
+          Fills the <strong>background paint layer</strong> of an element’s box (content + padding by default).
+        </p>
+        <pre><code>.note { background-color: lightgoldenrodyellow; }</code></pre>
+      </article>
+
+      <article>
+        <h3><code>border-color</code></h3>
+        <p>
+          Sets the color of an element’s border. Shorthand or per-side forms are allowed, and
+          it respects <code>currentColor</code> if you want borders to track the text color.
+        </p>
+        <pre><code>.card {
+  border: 2px solid currentColor;
+  color: #0a7; /* border will match this */
+}</code></pre>
+      </article>
+    </section>
+
+    <section id="formats">
+      <h2>How does CSS accept color as a value?</h2>
+      <p>Common, fully supported formats include <strong>named colors</strong>, <strong>hex</strong>, <strong>RGB/RGBA</strong>, and <strong>HSL/HSLA</strong>. Examples below:</p>
+
+      <div class="grid">
+        <article class="swatch">
+          <h3>Named</h3>
+          <pre><code>.named       { color: crimson; }
+.named-bg    { background-color: cornflowerblue; }
+.named-border{ border-color: tomato; }</code></pre>
+          <div class="demo named">Named color sample</div>
+        </article>
+
+        <article class="swatch">
+          <h3>Hexadecimal</h3>
+          <pre><code>.hex       { color: #1a1a1a; }
+.hex-3     { color: #0af; }        /* shorthand */
+.hex-alpha { background-color: #ff000080; } /* 50% alpha */</code></pre>
+          <div class="demo hex">Hex color sample</div>
+        </article>
+
+        <article class="swatch">
+          <h3>RGB / RGBA</h3>
+          <pre><code>.rgb     { color: rgb(34 139 34); }          /* space syntax */
+.rgba    { background-color: rgba(255, 165, 0, 0.25); } /* legacy comma syntax */</code></pre>
+          <div class="demo rgb">RGB/RGBA sample</div>
+        </article>
+
+        <article class="swatch">
+          <h3>HSL / HSLA (another format)</h3>
+          <pre><code>.hsl-bg     { background-color: hsl(200 80% 60%); }
+.hsla-border{ border-color: hsla(340, 90%, 50%, 0.6); }</code></pre>
+          <div class="demo hsl">HSL/HSLA sample</div>
+        </article>
+      </div>
+
+      <p class="note">
+        Tip: <code>currentColor</code> is a special keyword equal to the computed <code>color</code> value, useful to keep borders/icons in sync with text.
+      </p>
+    </section>
+
+    <section id="accessibility">
+      <h2>Quick Accessibility Note</h2>
+      <p>
+        Ensure sufficient contrast between text (<code>color</code>) and background (<code>background-color</code>).
+        A common heuristic is WCAG AA contrast ratio ≥ 4.5:1 for normal text.
+      </p>
+    </section>
+
+    <section id="examples">
+      <h2>Visual Examples</h2>
+      <div class="cards">
+        <div class="card named">Named + currentColor border</div>
+        <div class="card hex">Hex + currentColor border</div>
+        <div class="card rgb">RGB + currentColor border</div>
+        <div class="card hsl">HSL + currentColor border</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Code Log
 
