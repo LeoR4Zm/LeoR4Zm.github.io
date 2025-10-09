@@ -1,3 +1,7 @@
+/* Dtc355-codelogs, css-color, styles.css */
+body {
+  background-color: #fff; /* Author: Zimo Liu */
+}
 :root {
   --ink: #222;
   --paper: #fff;
