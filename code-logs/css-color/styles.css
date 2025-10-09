@@ -1,1 +1,100 @@
+:root {
+  --ink: #222;
+  --paper: #fff;
+  --muted: #666;
+  --accent: hsl(200 90% 50%);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+header, main, footer {
+  max-width: 960px;
+  margin: auto;
+  padding: 1.25rem;
+}
+
+header h1 { margin-bottom: .25rem; }
+.lede { color: var(--muted); margin-top: 0; }
+
+h2 { margin-top: 2rem; }
+
+pre {
+  background: #f7f7f9;
+  border: 1px solid #e7e7ea;
+  border-radius: 8px;
+  padding: .75rem;
+  overflow-x: auto;
+}
+
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.swatch h3 { margin-bottom: .25rem; }
+
+.demo {
+  margin-top: .5rem;
+  padding: .75rem 1rem;
+  border-radius: var(--radius);
+  border: 2px solid currentColor; /* tracks text color */
+  font-weight: 600;
+}
+
+/* Example color classes used in text/demos/cards */
+.named { color: crimson; }
+.hex { color: #0af; }               /* shorthand hex */
+.rgb { color: rgb(34 139 34); }     /* forestgreen-ish */
+.hsl { color: hsl(340 80% 45%); }   /* pink/red hue */
+
+.note {
+  background: #fff4cc;
+  border: 1px solid #ffe08a;
+  padding: .75rem 1rem;
+  border-radius: 8px;
+}
+
+/* Card examples showing background/border-color with currentColor */
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: .75rem;
+}
+
+.card {
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 3px solid currentColor;
+  background: #fafafa;
+}
+
+/* Extra background/border examples */
+.named-bg    { background-color: cornflowerblue; }
+.named-border{ border-color: tomato; }
+.hex-3       { color: #0af; }
+.hex-alpha   { background-color: #ff000080; }
+.rgba        { background-color: rgba(255, 165, 0, 0.25); }
+.hsl-bg      { background-color: hsl(200 80% 60%); }
+.hsla-border { border-color: hsla(340, 90%, 50%, 0.6); }
+
+footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  text-align: center;
+}
 
