@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Images</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Code Log: Images in HTML & CSS — differences between <img> and background-image, background properties, dimensions vs resolution, and common formats." />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Images</h1>
+    <p class="lede">How images are used in HTML and CSS, with side-by-side examples.</p>
+  </header>
+
+  <main class="container">
+    <!-- Q1: <img> vs background-image -->
+    <section class="panel">
+      <h2>1) &lt;img&gt; vs <code>background-image</code></h2>
+
+      <div class="grid-2">
+        <article>
+          <h3>HTML image (&lt;img&gt;)</h3>
+          <p><strong>Use when the image is content.</strong> It’s in the document flow, accessible by default, can have <code>alt</code> text, and is affected by layout properties like width and max-width.</p>
+          <figure>
+            <img
+              src="https://picsum.photos/id/1025/800/600"
+              alt="A close-up of a dog looking at the camera"
+              class="demo-img"
+            />
+            <figcaption><code>&lt;img&gt;</code> scales with <code>max-width: 100%</code>; keeps its intrinsic aspect ratio.</figcaption>
+          </figure>
+
+          <pre class="code"><code>&lt;img
+  src="dog.jpg"
+  alt="A dog looking at the camera"
+  class="demo-img"
+/&gt;</code></pre>
+        </article>
+
+        <article>
+          <h3>CSS background image</h3>
+          <p><strong>Use when the image is decoration.</strong> It’s not read by screen readers (unless you add additional markup), sits behind content, and doesn’t affect element size.</p>
+          <div class="bg-box bg-cover-center" aria-hidden="true">
+            <span class="badge">background-image</span>
+          </div>
+
+          <pre class="code"><code>.bg-box {
+  background-image: url("dog.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}</code></pre>
+        </article>
+      </div>
+
+      <details class="note">
+        <summary>Key differences</summary>
+        <ul>
+          <li><strong>Semantics & accessibility:</strong> <code>&lt;img&gt;</code> conveys content and supports <code>alt</code>. Backgrounds are decorative (no <code>alt</code>)—don’t use them for content that users must perceive.</li>
+          <li><strong>Layout:</strong> <code>&lt;img&gt;</code> participates in layout and sizes with its box; background images don’t change element size—they fill the element you give them.</li>
+          <li><strong>Styling:</strong> <code>object-fit</code>/<code>object-position</code> style <code>&lt;img&gt;</code>; <code>background-size</code>/<code>background-position</code>/<code>background-repeat</code> style background images.</li>
+          <li><strong>Interaction:</strong> <code>&lt;img&gt;</code> can be focused, linked, or lazy-loaded. Backgrounds are harder to make accessible and can’t have <code>alt</code>.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Q2: other background properties -->
+    <section class="panel">
+      <h2>2) Background properties beyond <code>background-image</code></h2>
+
+      <div class="grid-3">
+        <article>
+          <h3><code>background-size</code></h3>
+          <div class="bg-box bg-contain-top" aria-hidden="true"></div>
+          <p>
+            Controls how the image fits the box. Common values:
+            <code>cover</code> (fill, may crop), <code>contain</code> (fit inside, no crop), or explicit sizes (e.g., <code>200px auto</code>).
+          </p>
+        </article>
+
+        <article>
+          <h3><code>background-position</code></h3>
+          <div class="bg-box bg-cover-left" aria-hidden="true"></div>
+          <p>
+            Sets the anchor point inside the box (e.g., <code>center</code>, <code>top</code>, <code>left 20%</code>).
+            Useful with <code>cover</code> to choose which part stays visible.
+          </p>
+        </article>
+
+        <article>
+          <h3><code>background-repeat</code></h3>
+          <div class="bg-box pattern" aria-hidden="true"></div>
+          <p>
+            Repeat behavior: <code>repeat</code>, <code>no-repeat</code>, <code>repeat-x</code>, <code>repeat-y</code>. Great for patterns or textures.
+          </p>
+        </article>
+      </div>
+
+      <details class="note">
+        <summary>More useful ones</summary>
+        <ul>
+          <li><code>background-attachment: fixed</code> for a parallax-like effect.</li>
+          <li>Multiple backgrounds: <code>background: url(a), url(b);</code> layered back-to-front.</li>
+          <li><code>background-clip</code> / <code>background-origin</code> to control painting areas.</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- Q3: dimensions vs resolution -->
+    <section class="panel">
+      <h2>3) Dimensions vs resolution (one sentence)</h2>
+      <p><strong>Dimensions</strong> are the pixel width × height of an image (e.g., 1200×800), while <strong>resolution</strong> is pixel density (e.g., 72 or 300&nbsp;ppi) describing how tightly those pixels are packed when displayed or printed.</p>
+    </section>
+
+    <!-- Q4 (extra credit): formats -->
+    <section class="panel">
+      <h2>4) Formats: similarities & differences (extra credit)</h2>
+      <ul class="formats">
+        <li><strong>GIF</strong> — 8-bit palette (256 colors), lossless LZW, supports simple animation and 1-bit transparency; best for tiny animations or very simple graphics; poor for photos.</li>
+        <li><strong>PNG</strong> — Lossless, supports full alpha transparency; great for UI, icons, line art, screenshots; larger than JPEG for photos.</li>
+        <li><strong>JPG/JPEG</strong> — Lossy compression tuned for photos; small files at acceptable quality; no true transparency; not ideal for sharp text/UI.</li>
+        <li><strong>WebP</strong> — Modern format supporting lossy & lossless compression, transparency, and animation; usually smaller than PNG/JPEG with similar quality; widely supported in modern browsers.</li>
+        <li><strong>SVG</strong> — Vector graphics (XML); infinitely scalable, small for logos/icons/diagrams; styleable with CSS and scriptable; not for photographic detail.</li>
+      </ul>
+      <p><em>Rule of thumb:</em> photos → JPEG/WebP; logos/icons/UI with transparency → PNG/WebP/SVG; animations → GIF (legacy) or animated WebP/SVG where supported.</p>
+    </section>
+
+    <!-- Bonus: object-fit demo for <img> -->
+    <section class="panel">
+      <h2>Bonus: <code>object-fit</code> for &lt;img&gt;</h2>
+      <p>Like <code>background-size</code> for images. Compare <code>contain</code> vs <code>cover</code>:</p>
+      <div class="grid-2">
+        <figure class="frame">
+          <img src="https://picsum.photos/id/1069/800/600" alt="Mountain scene" class="of-contain" />
+          <figcaption><code>object-fit: contain;</code></figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="https://picsum.photos/id/1069/800/600" alt="Mountain scene" class="of-cover" />
+          <figcaption><code>object-fit: cover;</code></figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Zimo Liu</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
