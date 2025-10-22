@@ -1,1 +1,132 @@
+/* ========== Base Styles ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #fff;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Layout Containers */
+.site-header,
+main,
+.site-footer {
+  width: min(92vw, 900px);
+  margin-inline: auto;
+  padding: 1rem;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-block: 1.5rem;
+}
+
+.site-header h1 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.hero-img {
+  height: auto;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.intro {
+  color: #555;
+  max-width: 600px;
+  margin-inline: auto;
+  font-size: 1rem;
+}
+
+/* Panels */
+.panel {
+  background-color: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.25rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+}
+
+.panel h2 {
+  margin-top: 0;
+  color: #c0392b;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.25rem;
+}
+
+li + li {
+  margin-top: 0.4rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+  padding-block: 1rem;
+}
+
+.site-footer a {
+  color: #c0392b;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Responsive Layout ========== */
+
+/* Tablet: side-by-side ingredients + directions */
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+  }
+
+  .ingredients {
+    grid-column: 1;
+  }
+
+  .directions {
+    grid-column: 2;
+  }
+
+  .notes {
+    grid-column: 1 / span 2;
+  }
+}
+
+/* Desktop: larger spacing and text scaling */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  main {
+    gap: 2rem;
+  }
+  .panel {
+    padding: 1.5rem 2rem;
+  }
+}
