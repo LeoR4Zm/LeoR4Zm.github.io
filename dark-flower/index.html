@@ -4,7 +4,7 @@
   <!-- meta tags and title -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TP4: Pacific Rhododendron</title>
+  <title>TP4: Pacific Rhododendron — Dark Mode</title>
 
   <!-- external and internal CSS -->
   <link rel="stylesheet" href="styles.css" media="all" />
@@ -19,11 +19,21 @@
   </script>
 </head>
 <body>
+  <!-- Skip link for keyboard users -->
+  <a class="skip-link" href="#content">Skip to content</a>
+
   <header class="hero" role="banner" aria-label="Pacific Rhododendron hero">
     <div class="hero__overlay">
       <h1>Pacific Rhododendron</h1>
       <p><em>Rhododendron macrophyllum</em> — Washington’s state flower</p>
-      <a class="btn" href="#content">Skip to content</a>
+
+      <!-- NEW: Dark Mode button (required id for the instructor’s scripts) -->
+      <button id="toggleDarkMode" class="btn btn--toggle" type="button" aria-label="Toggle dark mode">
+        <span class="btn__icon" aria-hidden="true">🌙</span>
+        <span class="btn__label">Dark mode</span>
+      </button>
+
+      <a class="btn btn--ghost" href="#content">Skip to content</a>
     </div>
   </header>
 
@@ -74,9 +84,17 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>TP4 • Pacific Rhododendron • © 2025</p>
+  <footer class="site-footer" role="contentinfo">
+    <p>TP4 • Pacific Rhododendron • © <span id="year"></span></p>
     <p><a href="../">← Back to home</a></p>
   </footer>
+
+  <!-- tiny helper to keep the year current -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
