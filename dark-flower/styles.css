@@ -1,12 +1,50 @@
-/* =========== Design tokens =========== */
+/* =========== Design tokens (LIGHT default) =========== */
 :root{
-  --bg: #0e1111;
-  --ink: #f6f7f8;
-  --muted: #cfd6de;
-  --accent: #e56ba1;        /* rhodie bloom pink */
-  --card: #151a1f;
+  /* Page background gradient stops */
+  --bg1: #f5f7fa;
+  --bg2: #eef2f6;
+  --bg3: #f5f7fa;
+
+  /* Surfaces & text */
+  --bg: #ffffff;
+  --ink: #0e1111;
+  --muted: #4b5563;
+
+  /* Accents & borders */
+  --accent: #e56ba1;              /* rhodie bloom pink */
+  --card: #ffffff;
+  --border: #d9e0e7;              /* soft light border */
+
+  /* Hero overlay shade */
+  --heroShade: rgba(0,0,0,.35);
+
+  /* Other */
   --maxw: 1100px;
   --radius: 16px;
+
+  /* Buttons */
+  --btn-bg: var(--accent);
+  --btn-ink: #111;                /* good contrast on pink */
+}
+
+/* =========== Dark theme overrides (via instructor JS: body.darkMode) =========== */
+body.darkMode{
+  --bg1: #0a0d0e;
+  --bg2: #12171c;
+  --bg3: #0a0d0e;
+
+  --bg: #0e1111;                  /* original body tone */
+  --ink: #f6f7f8;
+  --muted: #cfd6de;
+
+  --accent: #e56ba1;
+  --card: #151a1f;
+  --border: #1e252c;
+
+  --heroShade: rgba(0,0,0,.55);
+
+  --btn-bg: var(--accent);
+  --btn-ink: #111;
 }
 
 /* =========== Base =========== */
@@ -15,25 +53,30 @@ html, body { margin: 0; padding: 0; }
 body{
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--ink);
-  background: linear-gradient(180deg, #0a0d0e, #12171c 40%, #0a0d0e);
+  background: linear-gradient(180deg, var(--bg1), var(--bg2) 40%, var(--bg3));
 }
+
+/* Anchor defaults */
+a{ color: var(--ink); }
+a:hover{ opacity:.9; }
 
 /* =========== Hero =========== */
 .hero{
   /* uses local rhododendron.jpg */
   background-image:
-    linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.55)),
+    linear-gradient(180deg, var(--heroShade), var(--heroShade)),
     url("rhododendron.jpg");
   background-size: cover;
   background-position: center;
   min-height: 42vh;
   display: grid;
   place-items: center;
-  border-bottom: 1px solid #222a33;
+  border-bottom: 1px solid var(--border);
 }
 .hero__overlay{
   text-align: center;
   padding: 3rem 1rem;
+  color: #fff; /* keep text readable on image */
 }
 .hero h1{
   margin: 0 0 .25rem;
@@ -42,16 +85,36 @@ body{
 }
 .hero p{
   margin: 0 0 1rem;
-  color: var(--muted);
+  color: #f1f5f9; /* slightly brighter than muted for image contrast */
 }
+
+/* =========== Buttons =========== */
 .btn{
   display: inline-block;
-  background: var(--accent);
-  color: #111;
+  background: var(--btn-bg);
+  color: var(--btn-ink);
   padding: .6rem 1rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 120ms ease, filter 120ms ease, border-color 120ms ease;
+}
+.btn:hover{ transform: translateY(-1px); filter: brightness(.97); }
+
+/* Toggle button (same .btn class works for <button> too) */
+.btn.btn--toggle{
+  cursor: pointer;
+}
+
+/* Optional ghost style for your “Skip to content” in the hero */
+.btn.btn--ghost{
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,.75);
+}
+.btn.btn--ghost:hover{
+  border-color: #fff;
 }
 
 /* =========== Layout =========== */
@@ -67,7 +130,7 @@ body{
 /* Cards */
 .facts, .about, .sources{
   background: var(--card);
-  border: 1px solid #1e252c;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1rem 1.25rem;
 }
@@ -78,20 +141,33 @@ body{
 .facts ul{ margin: 0; padding-left: 1rem; }
 .facts li + li{ margin-top: .4rem; }
 
+/* Typography colors inside cards adapt to theme */
+.facts, .about, .sources{
+  color: var(--ink);
+}
+.facts em, .about em, .sources em{ color: inherit; }
+.facts a, .about a, .sources a{
+  color: var(--accent);
+  text-decoration: none;
+}
+.facts a:hover, .about a:hover, .sources a:hover{
+  text-decoration: underline;
+}
+
 /* Media figure */
 .photo{
   margin: 1rem 0;
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid #24303a;
-  background: #0b0f13;
+  border: 1px solid var(--border);
+  background: color-mix(in oklab, var(--card) 85%, transparent);
 }
 .photo img{ display: block; width: 100%; height: auto; }
 .photo figcaption{
   padding: .5rem .75rem;
   color: var(--muted);
   font-size: .9rem;
-  border-top: 1px solid #24303a;
+  border-top: 1px solid var(--border);
 }
 
 /* Footer */
@@ -117,4 +193,9 @@ body{
     position: sticky;
     top: 1rem; /* facts card sticks while scrolling on desktop */
   }
+}
+
+/* =========== Reduced motion =========== */
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; animation: none !important; }
 }
