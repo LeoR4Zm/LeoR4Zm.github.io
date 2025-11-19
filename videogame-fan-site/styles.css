@@ -106,7 +106,6 @@ body {
   border-color: rgba(79, 70, 229, 0.7);
 }
 
-/* Optional: highlight the current page link using a class */
 .nav-links a.active {
   background: rgba(79, 70, 229, 0.35);
   color: #f9fafb;
@@ -261,7 +260,6 @@ body {
   max-width: 40rem;
 }
 
-/* Two-column content for text-heavy pages */
 .twocol {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
@@ -280,14 +278,12 @@ body {
   margin-bottom: 0.45rem;
 }
 
-/* Simple grid cards (e.g., genres, devs, games) */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1.5rem;
 }
 
-/* Section headings */
 .section-title {
   font-size: 1.25rem;
   margin: 0 0 0.35rem;
@@ -315,7 +311,6 @@ body {
 }
 
 /* ========== Images ========== */
-
 img.responsive {
   max-width: 100%;
   height: auto;
@@ -346,4 +341,3 @@ img.responsive {
     justify-content: flex-start;
   }
 }
-
