@@ -1,1 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code References</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- If you already have a shared CSS file for your Code Logs, keep this: -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Optional fallback styles in case styles.css is basic or missing -->
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f8;
+      color: #111827;
+    }
+
+    header, footer {
+      background: #111827;
+      color: #f9fafb;
+      padding: 1rem 1.5rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin-right: 1rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover,
+    nav a.current {
+      color: #f9fafb;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      margin-top: 1.8rem;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.3rem;
+    }
+
+    p {
+      margin: 0.5rem 0 0.8rem;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    code {
+      font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      background: #e5e7eb;
+      padding: 0.1rem 0.25rem;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+
+    a {
+      color: #2563eb;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Code References</h1>
+    <!-- Simple nav – edit links to match your site -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="code-references.html" class="current">Code References</a>
+      <!-- Add more links here if you have other Code Logs -->
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. What did you look up? -->
+    <section>
+      <h2>What did I look up?</h2>
+      <p>
+        I looked up the CSS property <code>border-radius</code>, which is used to round the
+        corners of boxes, buttons, images, and other elements. By changing its value, a
+        developer can make corners slightly rounded, heavily curved, or even turn a square
+        element into a circle.
+      </p>
+    </section>
+
+    <!-- 2. What sites did you consult? -->
+    <section>
+      <h2>What sites did I consult?</h2>
+      <p>These are the four reference pages I used for <code>border-radius</code>:</p>
+      <ul>
+        <li>
+          <strong>MDN Web Docs:</strong>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"
+             target="_blank" rel="noopener noreferrer">
+            CSS <code>border-radius</code> – MDN
+          </a>
+        </li>
+        <li>
+          <strong>W3Schools:</strong>
+          <a href="https://www.w3schools.com/cssref/css3_pr_border-radius.php"
+             target="_blank" rel="noopener noreferrer">
+            CSS <code>border-radius</code> Property – W3Schools
+          </a>
+        </li>
+        <li>
+          <strong>CSS-Tricks:</strong>
+          <a href="https://css-tricks.com/almanac/properties/b/border-radius/"
+             target="_blank" rel="noopener noreferrer">
+            Almanac: <code>border-radius</code> – CSS-Tricks
+          </a>
+        </li>
+        <li>
+          <strong>GeeksforGeeks:</strong>
+          <a href="https://www.geeksforgeeks.org/css-border-radius-property/"
+             target="_blank" rel="noopener noreferrer">
+            CSS <code>border-radius</code> Property – GeeksforGeeks
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 3. Differences between the sites -->
+    <section>
+      <h2>How did the information differ between sites?</h2>
+      <p>
+        <strong>MDN Web Docs</strong> presents <code>border-radius</code> in a very
+        technical and complete way. It includes the full formal syntax, tables of
+        possible values (including shorthand notation), and detailed notes about
+        elliptical radii and browser compatibility. It feels like a professional
+        reference manual rather than a tutorial, and it is especially useful when I
+        need precise definitions.
+      </p>
+      <p>
+        <strong>W3Schools</strong> focuses on a shorter, beginner-friendly explanation.
+        It shows a simple definition, a few clear examples, and a “Try it Yourself”
+        editor that lets me experiment with the code directly in the browser. It does
+        not go into as much depth as MDN, but it is very fast for checking basic usage.
+      </p>
+      <p>
+        <strong>CSS-Tricks</strong> is more practical and design-oriented. The page
+        explains how <code>border-radius</code> behaves in real layouts, and it
+        includes diagrams and examples that show the differences between using one
+        value, two values, or four separate values. It also demonstrates patterns such
+        as pill-shaped buttons, circular images, and asymmetric rounded corners, which
+        makes it easier to imagine how I would use the property in an actual project.
+      </p>
+      <p>
+        <strong>GeeksforGeeks</strong> provides a straightforward explanation with
+        several small examples. The page walks through common use cases and includes
+        code snippets with outputs. It is less visual than CSS-Tricks and less formal
+        than MDN, but it is helpful if I want to see quick, step-by-step examples for
+        different values of <code>border-radius</code>.
+      </p>
+    </section>
+
+    <!-- 4. Features a good code reference should offer -->
+    <section>
+      <h2>What features should a good code reference page offer?</h2>
+      <p>
+        After comparing these four resources, I think an effective code reference page
+        should offer a mix of precise information and practical examples. In particular,
+        it should include:
+      </p>
+      <ul>
+        <li>A short, clear definition in plain language.</li>
+        <li>A syntax section that shows how to write the property or tag.</li>
+        <li>Several small code examples, ideally with a live preview or editor.</li>
+        <li>Visual aids (such as diagrams or screenshots) for layout and shape changes.</li>
+        <li>Browser compatibility information or a warning if support is limited.</li>
+        <li>Notes about common mistakes, edge cases, and best practices.</li>
+        <li>Organized headings or a mini table of contents so it is easy to scan.</li>
+      </ul>
+      <p>
+        When a page combines these features, it serves both as a teaching resource for
+        beginners and as a quick reference for more experienced developers.
+      </p>
+    </section>
+
+    <!-- 5. Which resources were good or bad -->
+    <section>
+      <h2>Which resources stood out as good or bad?</h2>
+      <p>
+        For learning and using <code>border-radius</code>, <strong>CSS-Tricks</strong>
+        stood out as the most helpful overall because of its diagrams and practical
+        layout examples. It made it easy to understand how different values change the
+        shape of an element and how to apply those patterns in real designs.
+      </p>
+      <p>
+        <strong>MDN Web Docs</strong> was the strongest strict reference. It is the
+        best place to check the exact syntax, parameter meanings, and browser support,
+        even though it is more technical and less beginner-friendly than the other
+        sites.
+      </p>
+      <p>
+        <strong>W3Schools</strong> and <strong>GeeksforGeeks</strong> were both easy
+        to read and good for quick refreshers. Their examples are simple and direct,
+        but they do not go as deep into advanced layouts or edge cases as CSS-Tricks
+        and MDN. None of the sites felt “bad,” but each one is better suited for a
+        different purpose: quick code examples, deep reference, visual guides, or
+        step-by-step tutorials.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Name. Code Log: Code References.</p>
+  </footer>
+</body>
+</html>
 
