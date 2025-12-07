@@ -1,60 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- meta tags and title -->
+  <!-- Meta tags and title -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zimo Liu</title>
+  <title>Zimo Liu | Home</title>
 
-  <!-- external and internal CSS -->
-  <link rel="stylesheet" href="styles.css" media="all">
-  <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
-    h1 { color: #333; }
-    h2 { margin-top: 1.25rem; color: #444; }
-    ul { list-style-type: disc; margin-left: 1.5rem; }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-  <ul>
-  <li><a href="anni-albers/index.html">TP3: Layout 1 (Grid)</a></li>
-  <li><a href="anni-albers/index2.html">TP3: Layout 2 (Columns)</a></li>
-</ul>
-
 <body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- H1 with your name -->
-  <h1>Zimo Liu</h1>
+  <!-- Header + Nav -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="site-title">Zimo Liu</h1>
+        <!-- Tagline: < 10 words -->
+        <p class="tagline">Curious coder exploring design and systems.</p>
+      </div>
 
-  <!-- Placeholder tagline -->
-  <p><em>[Weakness and ignorance are not obstacles to survival; arrogance is.]</em></p>
+      <!-- GitHub repo button (NOT the website link) -->
+      <a
+        class="btn btn-primary"
+        href="https://github.com/LeoR4Zm/LeoR4Zm.github.io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View GitHub Repository
+      </a>
+    </div>
 
-  <!-- GitHub repo link -->
-  <p>
-    <a href="https://github.com/LeoR4Zm/LeoR4Zm.github.io" target="_blank">
-      Visit my GitHub Repository
-    </a>
-  </p>
+    <nav class="main-nav">
+      <div class="container nav-inner">
+        <a href="#activities">Activities</a>
+        <a href="#tiny-projects">Tiny Projects</a>
+        <a href="#major-project">Major Project</a>
+        <a href="#codecademy">Codecademy</a>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Future Activities section -->
-  <h2>Activities</h2>
-  <ul>
-    <li><a href="#">Activity 1(for future use)</a></li>
-    <li><a href="#">Activity 2(for future use)</a></li>
-    <li><a href="#">Activity 3(for future use)</a></li>
-  </ul>
+  <main id="main" class="container">
+    <!-- Hero / intro section -->
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Welcome to my course homepage</h2>
+        <p>
+          This site collects my class activities, code logs, tiny projects,
+          and my major project for this course. It’s a place to experiment
+          with HTML, CSS, and responsive design.
+        </p>
+        <p class="hero-note">
+          Explore the sections below to see how my work has evolved
+          throughout the semester.
+        </p>
+      </div>
 
-  <!-- Future Tiny Projects section -->
-  <h2>Tiny Projects</h2>
-  <ul>
-    <li><a href="#">Tiny Project 1 (for future use)</a></li>
-    <li><a href="#">Tiny Project 2 (for future use)</a></li>
-  </ul>
+      <!-- Simple “picture” block you can replace with an actual image -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-avatar">ZL</div>
+        <div class="hero-orbit"></div>
+      </div>
+    </section>
 
-  <!-- Future Major Project section -->
-  <h2>Major Project</h2>
-  <p><a href="#">Major Project (for future use)</a></p>
+    <!-- Activities -->
+    <section id="activities" class="content-section">
+      <h2>Activities</h2>
+      <p>
+        These activities and code logs practice different HTML and CSS
+        skills such as structure, color, images, and responsive layouts.
+      </p>
 
+      <!-- Core activities -->
+      <h3>Core Activities</h3>
+      <ul class="link-list">
+        <li>
+          <a href="hello-world.html">
+            Hello World – first HTML page
+          </a>
+        </li>
+        <li>
+          <a href="Activity5/index.html">
+            Activity 5 – Layout & structure
+          </a>
+        </li>
+        <li>
+          <a href="media-queries/index.html">
+            Media Queries – responsive layout activity
+          </a>
+        </li>
+      </ul>
+
+      <!-- Code logs (also counted as activities) -->
+      <h3>Code Logs</h3>
+      <ul class="link-list">
+        <li>
+          <a href="CodeLogs/log1/index.html">
+            Code Log 1 – Intro and basic concepts
+          </a>
+        </li>
+        <li>
+          <a href="code-log-images/index.html">
+            Code Log – Images
+          </a>
+        </li>
+        <li>
+          <a href="code-logs/css-color/index.html">
+            Code Log – CSS Color
+          </a>
+        </li>
+        <li>
+          <a href="code-logs-Code References/code-references.html">
+            Code Log – Code References
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Tiny Projects -->
+    <section id="tiny-projects" class="content-section">
+      <h2>Tiny Projects</h2>
+      <p>
+        Tiny Projects are focused experiments with layout, storytelling,
+        recipes, and visual style.
+      </p>
+
+      <div class="link-grid">
+        <!-- Anni Albers layouts -->
+        <article class="card">
+          <h3>TP3: Layout 1 (Grid)</h3>
+          <p>
+            Anni Albers–inspired layout using CSS Grid for a structured,
+            modern composition.
+          </p>
+          <a class="card-link" href="anni-albers/index.html">
+            Open Grid Layout
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>TP3: Layout 2 (Columns)</h3>
+          <p>
+            A column-based variation of the Anni Albers layout that
+            explores hierarchy and spacing.
+          </p>
+          <a class="card-link" href="anni-albers/index2.html">
+            Open Column Layout
+          </a>
+        </article>
+
+        <!-- Story / long scroll projects -->
+        <article class="card">
+          <h3>Dark Flower Story</h3>
+          <p>
+            A stylized narrative page experimenting with mood, color,
+            and typography.
+          </p>
+          <a class="card-link" href="dark-flower/index.html">
+            View Dark Flower
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Long Story</h3>
+          <p>
+            A long-scrolling story layout with responsive design and
+            simple interactions.
+          </p>
+          <a class="card-link" href="long-story/index.html">
+            View Long Story
+          </a>
+        </article>
+
+        <!-- Recipe / layout projects -->
+        <article class="card">
+          <h3>Favorite Recipe</h3>
+          <p>
+            A single-page recipe that focuses on clear structure and
+            readable steps.
+          </p>
+          <a class="card-link" href="favorite-recipe/index.html">
+            View Favorite Recipe
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Recipe Minisite</h3>
+          <p>
+            A small multi-page recipe site exploring internal navigation
+            and consistent design.
+          </p>
+          <a class="card-link" href="recipe-minisite/index.html">
+            Open Recipe Minisite
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Responsive Recipe</h3>
+          <p>
+            A recipe page redesigned to respond to both desktop and
+            mobile screens.
+          </p>
+          <a class="card-link" href="responsive-recipe/index.html">
+            View Responsive Recipe
+          </a>
+        </article>
+
+        <!-- Rhododendron / image + content layout -->
+        <article class="card">
+          <h3>Pacific Rhododendron</h3>
+          <p>
+            A content and image–focused page about the Pacific
+            Rhododendron, using layout and color.
+          </p>
+          <a class="card-link" href="rhododendron/index.html">
+            View Rhododendron Page
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Major Project -->
+    <section id="major-project" class="content-section">
+      <h2>Major Project</h2>
+      <p>
+        My Major Project is a larger entertainment fan site that brings
+        together multiple pages, navigation, and responsive layout
+        techniques from this course.
+      </p>
+      <p class="major-description">
+        <strong>Project focus:</strong>
+        A video game–focused fan site exploring iconic games, awards, and
+        community pages with consistent design across desktop and mobile.
+      </p>
+
+      <!-- Adjust this if your main page has a different file name -->
+      <a class="btn btn-secondary" href="videogame-fan-site/index.html">
+        View Major Project – Fan Site
+      </a>
+    </section>
+
+    <!-- Codecademy (optional, if you did extra credit) -->
+    <section id="codecademy" class="content-section">
+      <h2>Codecademy Profile</h2>
+      <p>
+        If you have been working on Codecademy exercises for extra credit,
+        your profile link can go here.
+      </p>
+
+      <!-- TODO: Replace # with your actual Codecademy profile URL -->
+      <p>
+        <a
+          class="inline-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit my Codecademy profile
+        </a>
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> Zimo Liu. Built with HTML &amp; CSS.</p>
+    </footer>
+  </main>
+
+  <!-- Tiny script for dynamic year (optional) -->
+  <script>
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
 </html>
-
-
