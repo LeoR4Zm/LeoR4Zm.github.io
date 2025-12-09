@@ -19,7 +19,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -52,6 +53,34 @@ body {
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
   padding: 1.5rem;
+}
+
+/* Headings inside cards */
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+/* Links inside cards (like on the home page grouped layout) */
+.card a {
+  color: var(--accent-soft);
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Inline code (used on copyright page) */
+code {
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  background: #020617;
+  border-radius: 6px;
+  padding: 0.1rem 0.35rem;
+  border: 1px solid #111827;
 }
 
 /* ========== Header & navigation ========== */
@@ -97,7 +126,10 @@ body {
   padding: 0.45rem 0.75rem;
   border-radius: 999px;
   border: 1px solid transparent;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .nav-links a:hover {
@@ -165,7 +197,11 @@ body {
   border-radius: 999px;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.12s ease;
 }
 
 .btn-primary {
@@ -316,6 +352,18 @@ img.responsive {
   height: auto;
   border-radius: var(--radius);
   display: block;
+}
+
+/* Image rows for small galleries (Minecraft, Ninja Gaiden, etc.) */
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.image-row img {
+  flex: 1 1 150px;
 }
 
 /* ========== Responsive tweaks ========== */
